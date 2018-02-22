@@ -1,6 +1,8 @@
+# Default nodes (anything not mentioned below!)
 node default {
 }
 
+# Master Server
 node 'pluto.universe' {
   include role::master_server
   file {'/root/README':
@@ -14,10 +16,12 @@ node 'pluto.universe' {
   }
 }
 
+# All webservers
 node /^web/ {
   include role::app_server
 }
 
+# All database servers
 node /^db/ {
   include role::db_server
 }
