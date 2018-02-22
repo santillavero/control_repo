@@ -1,9 +1,13 @@
 node default {
   file {'/root/README':
     ensure  => file,
-    content => "Welcome to ${fqdn} of type ${os.type}\n",
+    content => "Welcome to ${fqdn} of type ${os.family}\n",
     owner   => 'root',
     }
+  file {'/root/INTRO':
+    ensure  => file,
+    content => "Welcome to ${fqdn} of type ${os.family}\n",
+    }    
 }
 node 'pluto.universe' {
   include role::master_server
