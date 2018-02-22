@@ -5,3 +5,6 @@ node default {
     owner   => 'root',
     }
 }
+node 'pluto.universe' {
+  include role::master_server
+}
