@@ -1,7 +1,7 @@
 node default {
   file {'/root/README':
     ensure  => file,
-    content => 'This is a readme',
+    content => "Welcome to ${fqdn} of type ${os.type}",
     owner   => 'root',
     }
 }
