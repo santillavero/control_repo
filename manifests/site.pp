@@ -7,12 +7,12 @@ node 'pluto.universe' {
   include role::master_server
   file {'/root/README':
     ensure  => file,
-    content => "Welcome to ${fqdn} ${processors.count} CPU\n",
+    content => "Welcome to ${fqdn} ${processors[count]} CPU\n",
     owner   => 'root',
   }
   file {'/root/INTRO':
     ensure  => file,
-    content => "Welcome to ${fqdn} of type ${os.architecture}\n",
+    content => "Welcome to ${fqdn} of type ${os[architecture]}\n",
   }
 }
 
