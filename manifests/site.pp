@@ -16,6 +16,11 @@ node 'pluto.universe' {
   }
 }
 
+# Minecraft
+node 'minetest.puppet.vm' {
+  include role::minecraft_server
+}
+
 # All webservers
 node /^web/ {
   include role::app_server
