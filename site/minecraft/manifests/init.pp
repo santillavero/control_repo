@@ -1,15 +1,17 @@
 class minecraft {
+  $url='https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar'
+  $install_dir='/opt/minecraft'
   file {'/opt/minecraft':
     ensure => directory,
   }
-  file {'/opt/minecraft/minecraft_server.jar':
+  file {"${install_dir}/minecraft_server.jar":
     ensure => file,
-    source => 'https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar',
+    source => $url,
   }
   package {'java':
     ensure => present,
   }
-  file {'/opt/minecraft/eula.txt':
+  file {"${install_dir}/eula.txt":
     ensure => present,
     content => 'eula=true',
   }
