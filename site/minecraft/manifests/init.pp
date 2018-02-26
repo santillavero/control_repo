@@ -38,6 +38,12 @@ class minecraft (
       install_dir => $install_dir
     }),
   }
+  file {"${install_dir}/start.sh":
+    ensure => file,
+    content => epp('minecraft/start.sh',{
+      install_dir => $install_dir
+    }),
+  }  
   service {'minecraft':
     ensure => running,
     enable => true,
