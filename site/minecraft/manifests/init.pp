@@ -28,13 +28,13 @@ class minecraft (
       minecraft_port => $minecraft_port,
       minecraft_seed => $minecraft_seed,
       fqdn => $fqdn
-    }  
+    }
+  }
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
     content => epp('minecraft/minecraft.service',{
       install_dir => $install_dir
-    }),    
-  }
+    }),
   service {'minecraft':
     ensure => running,
     enable => true,
