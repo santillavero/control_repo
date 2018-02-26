@@ -1,10 +1,10 @@
 class minecraft (
   $url='https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar',
-  $install_dir='/opt/minecraft'
+  $install_dir='/opt/minecraft',
   $minecraft_world='Universe',
   $minecraft_port=25565,
-  $minecraft_seed="",
-  $fqdn="Universe"
+  $minecraft_seed='',
+  $fqdn='Universe'
 ){
   file {$install_dir:
     ensure => directory,
