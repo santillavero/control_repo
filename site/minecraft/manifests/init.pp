@@ -4,7 +4,7 @@ class minecraft (
   $minecraft_world='Universe',
   $minecraft_port=25565,
   $minecraft_seed="",
-  $fqdn="Minecraft"
+  $fqdn="Universe"
 ){
   file {$install_dir:
     ensure => directory,
