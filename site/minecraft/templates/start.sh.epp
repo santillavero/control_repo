@@ -1,0 +1,11 @@
+#!/bin/sh
+
+install_dir=<%= $install_dir %>
+Xms=32m
+Xmx=512m
+
+export install_dir
+
+cd ${install_dir}
+
+/usr/bin/java -Xmx${Xmx} -Xms${Xms} -jar minecraft_server.jar nogui
