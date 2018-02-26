@@ -4,6 +4,6 @@ class profile::minecraft {
     minecraft_world => 'Universe',
     minecraft_port => 25565,
     minecraft_seed => '',
-    fqdn=> 'Minecraft'    
+    fqdn=> $facts['fqdn']    
   }
 }
