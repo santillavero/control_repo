@@ -1,3 +1,5 @@
+# NEW init.pp
+
 class minecraft (
   $url='https://s3.amazonaws.com/Minecraft.Download/versions/1.12.2/minecraft_server.1.12.2.jar',
   $install_dir='/opt/minecraft',
@@ -28,13 +30,14 @@ class minecraft (
       minecraft_port => $minecraft_port,
       minecraft_seed => $minecraft_seed,
       fqdn => $fqdn
-    }
+    }),
   }
   file {'/etc/systemd/system/minecraft.service':
     ensure => file,
     content => epp('minecraft/minecraft.service',{
       install_dir => $install_dir
     }),
+  }
   service {'minecraft':
     ensure => running,
     enable => true,
