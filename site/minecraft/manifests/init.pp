@@ -23,9 +23,9 @@ class minecraft (
     ensure => present,
     content => 'eula=true',
   }
-  file {"${install_dir}/server.configuration":
+  file {"${install_dir}/server.properties":
     ensure => file,
-    content => epp('minecraft/server.configuration',{
+    content => epp('minecraft/server.properties',{
       minecraft_world => $minecraft_world,
       minecraft_port => $minecraft_port,
       minecraft_seed => $minecraft_seed,
@@ -41,6 +41,6 @@ class minecraft (
   service {'minecraft':
     ensure => running,
     enable => true,
-    require => [Package['java'],File["${install_dir}/eula.txt"],File['/etc/systemd/system/minecraft.service'],File["${install_dir}/server.configuration"]],
+    require => [Package['java'],File["${install_dir}/eula.txt"],File['/etc/systemd/system/minecraft.service'],File["${install_dir}/server.properties"]],
   }
 }
