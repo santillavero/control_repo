@@ -21,19 +21,18 @@ class minecraft (
     ensure => present,
     content => 'eula=true',
   }
-  file {'/etc/systemd/system/minecraft.service':
-    ensure => file,
-    content => epp('minecraft/minecraft.service',{
-      install_dir => $install_dir
-    }),
   file {"${install_dir}/server.configuration":
     ensure => file,
     content => epp('minecraft/server.configuration',{
-      install_dir => $install_dir,
       minecraft_world => $minecraft_world,
       minecraft_port => $minecraft_port,
       minecraft_seed => $minecraft_seed,
       fqdn => $fqdn
+    }  
+  file {'/etc/systemd/system/minecraft.service':
+    ensure => file,
+    content => epp('minecraft/minecraft.service',{
+      install_dir => $install_dir
     }),    
   }
   service {'minecraft':
