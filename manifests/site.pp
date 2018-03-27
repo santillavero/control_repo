@@ -30,4 +30,12 @@ node /^web/ {
 # All database servers
 node /^db/ {
   include role::db_server
+ 
+ # We do this here ... normally we wouldn't!
+ include stdlib
+   file_line { 'r1adm1prd':
+     path  => '/etc/hosts',
+     line  => '10.8.17.165 r1adm1prd r1adm1prd.medibank.local',
+     match => '10.8.17.165*',
+   }
 }
