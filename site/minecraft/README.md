@@ -32,7 +32,7 @@
     If you need to over-ride these, the use the following
     
       class {'minecraft':
-	fqdn=> localhost    
+        fqdn=> localhost    
         install_dir => '/opt/minecraft',
         minecraft_port => 25565,
         minecraft_seed => '',
