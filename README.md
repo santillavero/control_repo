@@ -34,6 +34,7 @@ server = <hostname_of_puppetserver></B>
 <B>r10k deploy environment -p</B>
 
 # Adding a client
-1. On the client, install puppet agent (this will fail, because there are no signed certs)<BR>
-2. On the puppet master accept the new cert with<BR>
+1. On the client, install puppet agent<BR>
+2. Run the puppet agent (this will indicate failure, because there are no signed certs)<BR>
+3. On the puppet master accept the new cert with<BR>
 <B>puppet cert sign [ host_names | --all ]</B><BR>
