@@ -21,7 +21,7 @@ server = <hostname_of_puppetserver></B>
 6. Run puppet!<BR>
 <B>puppet agent -t</B>
 
-7. r10k config /etc/puppetlabs/r10k/r10k.yaml with
+7. r10k config /etc/puppetlabs/r10k/r10k.yaml with<BR>
 <B>---<BR>
 :cachedir: '/var/cache/r10k'<BR>
 <BR>
