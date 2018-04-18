@@ -26,9 +26,9 @@ server = <hostname_of_puppetserver></B>
 :cachedir: '/var/cache/r10k'<BR>
 <BR>
 :sources:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;:my-org:<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;remote: 'GIT_URL_ADDRESS'<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;basedir: '/etc/puppetlabs/code/environments'<BR>
+&emsp;:my-org:<BR>
+&emsp;remote: 'GIT_URL_ADDRESS'<BR>
+&emsp;basedir: '/etc/puppetlabs/code/environments'<BR>
 </PRE></B>
 8. Run r10k<BR>
 <B>r10k deploy environment -p</B>
