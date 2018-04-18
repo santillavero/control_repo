@@ -31,9 +31,9 @@ server = <hostname_of_puppetserver></B>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;basedir: '/etc/puppetlabs/code/environments'<BR>
 </PRE></B>
 8. Run r10k<BR>
-	<B>r10k deploy environment -p</B>
+<B>r10k deploy environment -p</B>
 
 # Adding a client
 1. On the client, install puppet agent (this will fail, because there are no signed certs)<BR>
 2. On the puppet master accept the new cert with<BR>
-puppet cert sign <host> | --all<BR>
+<B>puppet cert sign [ <host> | --all ]</B><BR>
