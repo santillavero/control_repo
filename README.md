@@ -22,14 +22,15 @@ server = <hostname_of_puppetserver></B>
 <B>puppet agent -t</B>
 
 7. r10k config /etc/puppetlabs/r10k/r10k.yaml with<BR>
-<B>---<BR>
+<B><PRE>
+---
 :cachedir: '/var/cache/r10k'<BR>
 <BR>
 :sources:<BR>
     :my-org:<BR>
         remote: 'https://github.com/santillavero/control_repo.git'<BR>
         basedir: '/etc/puppetlabs/code/environments'<BR>
-</B><BR>
+</PRE></B>
 8. Run r10k<BR>
 	<B>r10k deploy environment -p</B>
 
