@@ -1,4 +1,5 @@
 # control_repo
+
 1. Install the RPM repository (see the puppet web page)<BR>
 <B>rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm</B>
 
